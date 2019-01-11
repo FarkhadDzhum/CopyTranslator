@@ -4,7 +4,7 @@
 # @FileName: constant.py
 # @Software: PyCharm
 
-logopath = 'logo.ico'
+logopath = '.\copyTranslator\logo.ico'
 version = 'v0.0.7-Kylin-RC1'
 project_name = 'CopyTranslator'
 update_json_url = 'https://hypercube.top/copytranslator/version.json'

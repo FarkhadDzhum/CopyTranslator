@@ -5,7 +5,7 @@
 # @FileName: language.py
 # @Software: PyCharm
 import json
-
+import os
 from googletranslator import GoogleLanguages
 
 Chinese = {
@@ -40,7 +40,7 @@ Chinese = {
 
 English = {k: k for k, v in Chinese.items()}
 
-
+curdir = os.curdir + '/copyTranslator/'
 class LanguageManager:
     chinese_lang = 'zh-cn.json'
     English_lang = 'en.json'
@@ -55,7 +55,7 @@ class LanguageManager:
             return
         self.language = language
         path = GoogleLanguages[language] + '.json'
-        myfile = open(path, 'r')
+        myfile = open(curdir + path, 'r')
         self.value = json.load(myfile)
         myfile.close()
 
@@ -63,7 +63,7 @@ class LanguageManager:
         return self.value[item]
 
     def save(self, path):
-        myfile = open(path, 'w')
+        myfile = open(curdir + path, 'w')
         json.dump(self.value, myfile, indent=4)
         myfile.close()
 
