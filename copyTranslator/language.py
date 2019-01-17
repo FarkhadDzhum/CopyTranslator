@@ -39,11 +39,12 @@ Chinese = {
 }
 
 English = {k: k for k, v in Chinese.items()}
-
+Russian = English
 curdir = os.curdir + '/copyTranslator/'
 class LanguageManager:
     chinese_lang = 'zh-cn.json'
     English_lang = 'en.json'
+    Russian_lang = 'ru.json'
 
     def __init__(self, language=None):
         self.value = None
@@ -80,4 +81,6 @@ if __name__ == '__main__':
     lang.save('en.json')
     lang.value = Chinese
     lang.save('zh-cn.json')
+    lang.value = Russian
+    lang.save('ru.json')
     # print(lang.value)
